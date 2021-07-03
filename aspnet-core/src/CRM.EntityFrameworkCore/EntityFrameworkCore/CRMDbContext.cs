@@ -5,6 +5,7 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
+using CRM.Domain.Entity;
 
 namespace CRM.EntityFrameworkCore
 {
@@ -21,6 +22,8 @@ namespace CRM.EntityFrameworkCore
     public class CRMDbContext : AbpDbContext<CRMDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+
+        public DbSet<Product> Product { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside CRMDbContextModelCreatingExtensions.ConfigureCRM

@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRM.Domain.Entity;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace CRM.EntityFrameworkCore
 {
@@ -8,6 +10,11 @@ namespace CRM.EntityFrameworkCore
         public static void ConfigureCRM(this ModelBuilder builder)
         {
             Check.NotNull(builder, nameof(builder));
+
+            builder.Entity<Product>(b => {
+                b.ToTable(CRMConsts.DbTablePrefix + "Product", CRMConsts.DbSchema);
+                b.ConfigureByConvention();
+            });
 
             /* Configure your own tables/entities inside here */
 

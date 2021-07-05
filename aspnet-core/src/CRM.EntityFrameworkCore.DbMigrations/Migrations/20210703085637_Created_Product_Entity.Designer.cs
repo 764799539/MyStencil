@@ -4,15 +4,17 @@ using CRM.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace CRM.Migrations
 {
     [DbContext(typeof(CRMMigrationsDbContext))]
-    partial class CRMMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210703085637_Created_Product_Entity")]
+    partial class Created_Product_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,6 @@ namespace CRM.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CreatorId");
 
-                    b.Property<string>("Describe")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
@@ -70,7 +69,7 @@ namespace CRM.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CRMProduct");
+                    b.ToTable("AppProduct");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

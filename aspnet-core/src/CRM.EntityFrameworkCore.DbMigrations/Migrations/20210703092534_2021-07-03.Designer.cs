@@ -4,15 +4,17 @@ using CRM.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace CRM.Migrations
 {
     [DbContext(typeof(CRMMigrationsDbContext))]
-    partial class CRMMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210703092534_2021-07-03")]
+    partial class _20210703
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

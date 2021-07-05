@@ -9,12 +9,19 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace CRM.Domain.Entity
 {
+    /// <summary>
+    /// 产品实体
+    /// </summary>
     public class Product : AuditedAggregateRoot<Guid>, ISoftDelete
     {
         /// <summary>
         /// 名称
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 描述
+        /// </summary>
+        public string Describe { get; set; }
         /// <summary>
         /// 类型
         /// </summary>

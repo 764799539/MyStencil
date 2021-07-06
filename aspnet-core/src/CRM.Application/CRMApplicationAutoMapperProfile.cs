@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CRM.Contracts.EntityDto;
 using CRM.Domain.Entity;
+using Volo.Abp.AutoMapper;
 
 namespace CRM
 {
@@ -13,6 +14,10 @@ namespace CRM
              * into multiple profile classes for a better organization. */
 
             CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>().IgnoreAuditedObjectProperties();
+
+            CreateMap<ProductDetail, ProductDetailDto>();
+            CreateMap<ProductDetailDto, ProductDetail>().IgnoreAuditedObjectProperties();
         }
     }
 }

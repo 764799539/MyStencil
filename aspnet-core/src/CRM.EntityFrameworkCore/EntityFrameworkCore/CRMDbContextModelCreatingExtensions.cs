@@ -16,6 +16,11 @@ namespace CRM.EntityFrameworkCore
                 b.ConfigureByConvention();
             });
 
+            builder.Entity<ProductDetail>(b => {
+                b.ToTable(CRMConsts.DbTablePrefix + "ProductDetail", CRMConsts.DbSchema);
+                b.ConfigureByConvention();
+            });
+
             /* Configure your own tables/entities inside here */
 
             //builder.Entity<YourEntity>(b =>

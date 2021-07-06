@@ -24,6 +24,7 @@ namespace CRM.EntityFrameworkCore
         public DbSet<AppUser> Users { get; set; }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<ProductDetail> ProductDetail { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside CRMDbContextModelCreatingExtensions.ConfigureCRM
